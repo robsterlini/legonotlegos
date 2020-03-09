@@ -19,6 +19,11 @@
   },
   "homepage": "https://legonotlegos.com",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0"
+    "@11ty/eleventy": "^0.10.0",
+    "autoprefixer": "^9.7.4",
+    "cssnano": "^4.1.10",
+    "postcss": "^7.0.27",
+    "postcss-import": "^12.0.1",
+    "postcss-simple-vars": "^5.0.2"
   }
 }
