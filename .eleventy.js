@@ -15,11 +15,13 @@ module.exports = function(config) {
       require('autoprefixer')(),
       require('cssnano')(),
     ])
-    .use(require("postcss-import")())
-    .process(code)
-    .then(function(result) {
-      callback(null, result.css);
-    });
+      .use(require("postcss-import")())
+      .process(code, {
+        from: undefined,
+      })
+      .then(function(result) {
+        callback(null, result.css);
+      });
   });
 
   config.addLayoutAlias('default', 'base.njk');
