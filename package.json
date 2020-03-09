@@ -1,0 +1,24 @@
+{
+  "name": "legonotlegos",
+  "version": "1.0.0",
+  "description": "A Fueled 10% time exploration of 11ty for a more informative legonotlegos.com",
+  "scripts": {
+    "develop": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
+    "start": "npm run develop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://robsterlini@github.com/robsterlini/legonotlegos.git"
+  },
+  "keywords": [],
+  "author": "Rob Sterlini-Aitchison <hi@robsterlini.co.uk> (https://robsterlini.co.uk)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robsterlini/legonotlegos/issues"
+  },
+  "homepage": "https://legonotlegos.com",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0"
+  }
+}
