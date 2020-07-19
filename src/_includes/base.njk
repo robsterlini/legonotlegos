@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {%- set metaTitle %}{{ title }} | {{ titleSuffix or "LEGO not Legos" }}{% endset %}
+    {%- set metaDescription %}LEGO&reg; is a registered trademark of the LEGO group, but all too often it is referred to incorrectly as Legos or LEGOs. This is a simple site to help people understand the difference.{% endset %}
+    {%- set metaUrl %}https://legonotlegos.com{{ page.url | url }}{% endset %}
+    {%- set metaImage %}https://legonotlegos.com/images/meta.png{% endset %}
+
+    <title>{{ metaTitle }}</title>
+
+    <meta name="title" content="{{ metaTitle }}">
+    <meta name="description" content="{{ metaDescription }}">
+
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ metaUrl }}">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ metaDescription }}">
+    <meta property="og:image" content="{{ metaImage }}">
+    <meta property="og:image:width" content="1440">
+    <meta property="og:image:height" content="720">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ metaUrl }}">
+    <meta property="twitter:title" content="{{ title }}">
+    <meta property="twitter:description" content="{{ metaDescription }}">
+    <meta property="twitter:image" content="{{ metaImage }}">
+
+    <meta name="author" content="Rob Sterlini">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Eleventy, https://github.com/robsterlini/legonotlegos">
+
+    <link rel="alternate icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    {% set googleFontsUrl = "https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,600;1,400" %}
+    <!-- Technique from https://csswizardry.com/2020/05/the-fastest-google-fonts/ -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="{{ googleFontsUrl }}" />
+    <link rel="stylesheet" href="{{ googleFontsUrl }}" media="print" onload="this.media='all'" />
+
+    {% set stylesScss %}{% include "styles.scss" %}{% endset %}
+    <style>{{ stylesScss | inlineScss | safe }}</style>
+
+  </head>
+  <body>
+    <main class="main">
+      {% include "header.njk" %}
+      {{ content | safe }}
+    </main>
+    {% include "footer.njk" %}
+  </body>
+</html>

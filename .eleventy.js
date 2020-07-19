@@ -1,35 +1,82 @@
-const postcss = require('postcss');
+const sass = require('node-sass');
+const htmlmin = require('html-minifier');
 
-module.exports = function(config) {
+const input = 'src';
+const output = 'dist';
 
-  config.addNunjucksAsyncFilter('postcss', function(code, callback) {
-    const css = postcss([
-      require('postcss-import')({
-        path: [
-          'src/site/_includes/css/',
-        ],
-      }),
-      require('postcss-simple-vars')({
-        silent: true
-      }),
-      require('autoprefixer')(),
-      require('cssnano')(),
-    ])
-      .use(require("postcss-import")())
-      .process(code, {
-        from: undefined,
-      })
-      .then(function(result) {
-        callback(null, result.css);
+const explanations = require('./src/_data/explanations.json');
+
+const SCSS_OPTIONS = {
+  includePaths: [
+    `${input}/_includes`,
+  ],
+  outputStyle: 'compressed',
+};
+
+const inlineScss = (data, callback) => {
+  const scssOptions = {
+    ...SCSS_OPTIONS,
+    data,
+  };
+
+  const scssCallback = (error, result) => {
+    callback(null, !error ? result.css : '');
+
+    if (error) {
+      console.error('Error', error.line, error.message);
+    }
+  };
+
+  sass.render(scssOptions, scssCallback);
+};
+
+module.exports = function(eleventyConfig) {
+
+  // Scss
+  eleventyConfig.addNunjucksAsyncFilter('inlineScss', inlineScss);
+
+  // Transforms
+  eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
+    if (outputPath.endsWith('.html')) {
+      return htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true,
+        minifyJS: true
       });
+    }
+
+    return content;
   });
 
-  config.addLayoutAlias('default', 'base.njk');
+  // Explanation pages
+  const generateExplanationsByType = (arr, type) => arr[type].map(wrong => ({ type, wrong }));
+
+  eleventyConfig.addCollection('explanations', collectionApi => {
+    return [
+      ...generateExplanationsByType(explanations, 'singular'),
+      ...generateExplanationsByType(explanations, 'plural'),
+    ];
+  });
+
+  // Layouts
+  eleventyConfig.addLayoutAlias('default', 'base.njk');
+
+  // Pass through files
+  const filesToCopy = [
+    `${input}/images`,
+    `${input}/favicon.svg`,
+    `${input}/favicon.png`,
+  ];
+
+  filesToCopy.forEach(file => {
+    eleventyConfig.addPassthroughCopy(file);
+  });
 
   return {
     dir: {
-      input: 'src/site',
-      output: 'dist',
+      input,
+      output,
     },
     templateFormats : ['njk', 'md'],
     htmlTemplateEngine : 'njk',

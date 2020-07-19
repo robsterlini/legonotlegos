@@ -1,0 +1,42 @@
+---
+layout: default
+pagination:
+  data: collections.explanations
+  size: 1
+  alias: explanation
+permalink: "{{ explanation.wrong | slug }}/index.html"
+eleventyComputed:
+  title: "It’s not {{ explanation.wrong }}"
+---
+
+<div class="hero">
+  <div class="group">
+    <h1 class="hero__heading">It’s not <em>{{ explanation.wrong }}</em></h1>
+  </div>
+</div>
+
+<div class="group">
+
+  <h2>What is it then?</h2>
+
+  {% set examplesSet = [examples.singularSet, examples.singularBrick] %}
+  {% set explanationParagraph %}Probaby a LEGO brick, or maybe a LEGO set:{% endset %}
+
+  {% if explanation.type === 'plural' %}
+    {% set examplesSet = [examples.pluralSet, examples.pluralBrick] %}
+    {% set explanationParagraph %}Probaby LEGO bricks, or maybe LEGO sets:{% endset %}
+  {% endif %}
+
+  <p>{{ explanationParagraph }}</p>
+  <div class="example">
+    {% for exampleSet in examplesSet %}
+      <div class="example__set">
+        <p class="example__example example__example--bad"><span class="sr-only">Bad</span> {% include "svg/bad.svg" %} {{ exampleSet.bad | safe }}</p>
+        <p class="example__example example__example--good"><span class="sr-only">Good</span> {% include "svg/good.svg" %} {{ exampleSet.good | safe }}</p>
+      </div>
+    {% endfor %}
+  </div>
+
+  <h2>But, why?</h2>
+  <p>Check the <a href="/">homepage</a> for a full&nbsp;explaination.</p>
+</div>

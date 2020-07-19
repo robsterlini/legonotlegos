@@ -1,0 +1,18 @@
+{
+  "singularSet": {
+    "bad": "I bought my daughter <em>a&nbsp;lego</em>.",
+    "good": "I bought my daughter <em>a LEGO&nbsp;set</em>."
+  },
+  "singularBrick": {
+    "bad": "It hurt when I stepped on <em>a&nbsp;lego</em>.",
+    "good": "It hurt when I stepped on <em>a LEGO&nbsp;brick</em>."
+  },
+  "pluralSet": {
+    "bad": "I gave my son my old <em>legos (or&nbsp;legoes)</em>.",
+    "good": "I gave my son my old <em>LEGO&nbsp;sets</em>."
+  },
+  "pluralBrick": {
+    "bad": "I really like the red <em>legos (or&nbsp;legoes)</em>.",
+    "good": "I really like the red <em>LEGO&nbsp;bricks</em>."
+  }
+}

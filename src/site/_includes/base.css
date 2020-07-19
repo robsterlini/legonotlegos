@@ -1,6 +1,0 @@
-@import 'constants.css';
-
-body {
-  background: $lego-red;
-  color: $lego-white;
-}

@@ -12,18 +12,15 @@
     "url": "git+https://robsterlini@github.com/robsterlini/legonotlegos.git"
   },
   "keywords": [],
-  "author": "Rob Sterlini-Aitchison <hi@robsterlini.co.uk> (https://robsterlini.co.uk)",
+  "author": "Rob Sterlini <hi@robsterlini.co.uk> (https://robsterlini.co.uk)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/robsterlini/legonotlegos/issues"
   },
   "homepage": "https://legonotlegos.com",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "autoprefixer": "^9.7.4",
-    "cssnano": "^4.1.10",
-    "postcss": "^7.0.27",
-    "postcss-import": "^12.0.1",
-    "postcss-simple-vars": "^5.0.2"
+    "@11ty/eleventy": "^0.11.0",
+    "html-minifier": "^4.0.0",
+    "node-sass": "^4.14.1"
   }
 }

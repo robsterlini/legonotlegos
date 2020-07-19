@@ -1,0 +1,98 @@
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  font-size: 1.125rem;
+}
+
+@media screen and (min-width: 48em) {
+  font-size: calc(0.4rem + 1.5vw);
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  background: $color-light;
+  color: $color-dark;
+  font-family: 'Asap', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  min-height: 100%;
+}
+
+.main {
+  flex: 1;
+}
+
+.group {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 28rem;
+  padding: 2rem 0;
+
+  @media screen and (min-width: 48em) {
+    max-width: 42rem;
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  color: #205ce6;
+  text-decoration-color: rgba(#205ce6, 0.25);
+
+  &:visited {
+    color: #4b15b2;
+    text-decoration-color: rgba(#4b15b2, 0.25);
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration-color: currentColor;
+  }
+
+  &:active {
+    opacity: 0.66;
+  }
+}
+
+abbr {
+  border: 0;
+  text-decoration: none;
+}
+
+h2,
+h3 {
+  margin: 1.5em 0 0.5em;
+}
+
+p {
+  margin: 0 0 0.5em;
+  max-width: 36em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  border: 0;
+}
