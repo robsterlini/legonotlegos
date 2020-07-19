@@ -9,10 +9,10 @@ body {
 html {
   height: 100%;
   font-size: 1.125rem;
-}
 
-@media screen and (min-width: 48em) {
-  font-size: calc(0.4rem + 1.5vw);
+  @media screen and (min-width: 48em) {
+    font-size: calc(0.645rem + 1vw);
+  }
 }
 
 body {
