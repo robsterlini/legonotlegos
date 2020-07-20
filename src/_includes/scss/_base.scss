@@ -17,6 +17,10 @@ html {
   @media screen and (min-width: 48em) {
     font-size: calc(0.645rem + 1vw);
   }
+
+  @media screen and (min-width: 110.5em) {
+    font-size: 1.75rem;
+  }
 }
 
 body {
