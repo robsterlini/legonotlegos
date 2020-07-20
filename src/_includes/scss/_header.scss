@@ -22,27 +22,13 @@
     display: flex;
   }
 
-  a {
-    color: inherit;
-  }
-
   &__logo {
-    font-size: 1rem;
-    text-decoration: none;
+    font-size: 1.125rem;
     font-weight: 400;
   }
 
   &__share {
     margin-left: auto;
-    font-size: 0.825rem;
-
-    &#{&} {
-      text-decoration-color: rgba($lego-white, 0.5);
-
-      &:hover,
-      &:focus {
-        text-decoration-color: currentColor;
-      }
-    }
+    font-size: 0.9375rem;
   }
 }

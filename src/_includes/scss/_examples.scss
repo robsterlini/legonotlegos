@@ -1,19 +1,15 @@
 .example {
 
-  &__set {
-    padding-left: 1.55rem;
-    margin: 1em 0;
+  @media screen and (min-width: 48em) {
 
-    @media screen and (max-width: 47.9375em) {
-
-      & + & {
-        margin-top: 1.5em;
-      }
+    h3 + & {
+      margin-top: -0.5rem;
     }
   }
 
-  p + & {
-    margin-top: 0.5em;
+  &__set {
+    padding-left: 1.55rem;
+    margin: 1.5rem 0 0;
   }
 
   svg {
@@ -27,12 +23,13 @@
   }
 
   path {
-    fill: #EDCE20;
-    fill: mix($lego-red, $color-light, 25%);
+    fill: $lego-yellow;
+    // fill: #EDCE20;
+    // fill: mix($lego-red, $color-light, 25%);
   }
 
   circle {
-    fill: $lego-red;
+    // fill: $lego-red;
   }
 
   &__example {
@@ -42,11 +39,11 @@
       font-weight: 600;
 
       path {
-        fill: mix(#347813, $color-light, 25%);
+        // fill: mix(#347813, $color-light, 25%);
       }
 
       circle {
-        fill: #347813;
+        // fill: #347813;
       }
     }
   }

@@ -1,9 +1,11 @@
 $lego-red: #D11013;
 $lego-white: #FFF;
-$lego-yellow: #FFED00;
+$lego-yellow: mix(#FFED00, white, 65%);
+$lego-black: #000;
 
+$color-lightest: $lego-white;
 $color-light: #EDEDED;
-$color-dark: #1B1B1B;
+$color-dark: darken($lego-red, 10%);
 
 $header-height: 3rem;
 $header-offset: 1.5rem;

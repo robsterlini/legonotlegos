@@ -8,7 +8,11 @@ body {
 
 html {
   height: 100%;
-  font-size: 1.125rem;
+  font-size: 0.9375rem;
+
+  @media screen and (min-width: 18em) {
+    font-size: 1.125rem;
+  }
 
   @media screen and (min-width: 48em) {
     font-size: calc(0.645rem + 1vw);
@@ -19,8 +23,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 
-  background: $color-light;
-  color: $color-dark;
+  background: $color-dark;
+  color: $color-light;
   font-family: 'Asap', sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -33,9 +37,9 @@ body {
 
 .group {
   margin: 0 auto;
-  width: 95%;
+  width: calc(100% - 1.5rem);
   max-width: 28rem;
-  padding: 2rem 0;
+  padding: 3rem 0;
 
   @media screen and (min-width: 48em) {
     max-width: 42rem;
@@ -51,12 +55,21 @@ body {
 }
 
 a {
-  color: #205ce6;
-  text-decoration-color: rgba(#205ce6, 0.25);
+  color: $color-lightest;
+  text-decoration-color: rgba($color-lightest, 0.5);
 
-  &:visited {
-    color: #4b15b2;
-    text-decoration-color: rgba(#4b15b2, 0.25);
+  &[href^="http"]:not([href^="https://twitter"]) {
+
+    &:visited {
+      color: mix($color-lightest, $color-dark, 80%);
+      text-decoration-color: mix($color-lightest, $color-dark, 50%);
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-lightest;
+      text-decoration-color: currentColor;
+    }
   }
 
   &:hover,
@@ -65,7 +78,20 @@ a {
   }
 
   &:active {
-    opacity: 0.66;
+    opacity: 0.6;
+  }
+}
+
+.link--inherit {
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
   }
 }
 
@@ -74,7 +100,10 @@ abbr {
   text-decoration: none;
 }
 
-h2,
+h2 {
+  margin: 2em 0 0.5em;
+}
+
 h3 {
   margin: 1.5em 0 0.5em;
 }
@@ -82,6 +111,11 @@ h3 {
 p {
   margin: 0 0 0.5em;
   max-width: 36em;
+}
+
+::selection {
+  background: $lego-black;
+  color: $lego-white;
 }
 
 .sr-only {
