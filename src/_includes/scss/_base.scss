@@ -29,6 +29,7 @@ body {
 
   background: $color-dark;
   color: $color-light;
+  text-shadow: rgba(black, 0.15) 0.05rem 0.05rem 0.1rem;
   font-family: 'Asap', sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -36,6 +37,7 @@ body {
 }
 
 .main {
+  background: $color-dark;
   flex: 1;
 }
 
@@ -105,10 +107,13 @@ abbr {
 }
 
 h2 {
+  color: mix($color-minifig, $color-light, 80%);
   margin: 2em 0 0.5em;
+  font-size: 1.5rem;
 }
 
 h3 {
+  font-size: 1.25rem;
   margin: 1.5em 0 0.5em;
 }
 
