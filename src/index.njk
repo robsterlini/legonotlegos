@@ -1,0 +1,74 @@
+---
+title: LEGO not Legos
+titleSuffix: A Rob Sterlini PSA
+layout: default
+---
+
+<div class="hero">
+  <div class="group">
+    <h1 class="hero__heading">It’s {% include "svg/marque.svg" %} not&nbsp;Legos</h1>
+  </div>
+</div>
+
+<div class="group">
+  <div class="why__set">
+    <p class="why__question">Huh… are you&nbsp;sure?</p>&ensp;
+    <p class="why__answer">Yep!</p>
+  </div>
+  <div class="why__set">
+    <p class="why__question">Is it&nbsp;<em>legos</em>?</p>&ensp;
+    <p class="why__answer">Nope.</p>
+  </div>
+  <div class="why__set">
+    <p class="why__question">Is it ever <em>a&nbsp;lego</em>?</p>&ensp;
+    <p class="why__answer">No.</p>
+  </div>
+  <div class="why__set">
+    <p class="why__question">What about&nbsp;<em>legoes</em>?</p>&ensp;
+    <p class="why__answer">Really, definitely&nbsp;no!</p>
+  </div>
+  <div class="why__set">
+    <p class="why__question">So what is it&nbsp;then…?</p>&ensp;
+    <p class="why__answer">It’s almost always just bricks and&nbsp;sets!</p>
+  </div>
+
+  <h2>Bricks and sets?</h2>
+  <p>People most often use <em>legos</em> when they mean <em>LEGO bricks</em>, or occassionally <em>LEGO&nbsp;sets</em>:</p>
+
+  <h3>Singular</h3>
+  {% set examplesSingular = [examples.singularSet, examples.singularBrick] %}
+  <div class="example">
+    {% for exampleSet in examplesSingular %}
+      <div class="example__set">
+        <p class="example__example example__example--bad">{% include "svg/bad.svg" -%}<span class="sr-only">Bad </span>{{ exampleSet.bad | safe }}</p>
+        <p class="example__example example__example--good">{% include "svg/good.svg" -%}<span class="sr-only">Good </span>{{ exampleSet.good | safe }}</p>
+      </div>
+    {% endfor %}
+  </div>
+
+  <h3>Plural</h3>
+  {% set examplesPlural = [examples.pluralSet, examples.pluralBrick] %}
+  <div class="example">
+    {% for exampleSet in examplesPlural %}
+      <div class="example__set">
+        <p class="example__example example__example--bad"><span class="sr-only">Bad</span> {% include "svg/bad.svg" %} {{ exampleSet.bad | safe }}</p>
+        <p class="example__example example__example--good"><span class="sr-only">Good</span> {% include "svg/good.svg" %} {{ exampleSet.good | safe }}</p>
+      </div>
+    {% endfor %}
+  </div>
+
+  <h2>Are there any&nbsp;exceptions?</h2>
+  <p>Yes and no. “I have a LEGO tattoo” might be more accurately phrased as “I have a tattoo of two LEGO minifigures”, but is probably okay<a href="#footer">*</a>.</p>
+  <p>Just basically don’t do the ones above,&nbsp;okay?</p>
+
+  <h2>Why do you keep&nbsp;shouting?</h2>
+  <p>I’m not shouting or yelling. LEGO is one of those brand like adidas (note the lowercase “a”) that don’t use title case for their brand&nbsp;name.</a>
+
+  <h2>Does it really&nbsp;matter?</h2>
+  <p>Probably not, but is it not better to get it right? After all, <a href="https://twitter.com/LEGO_Group/status/842115345280294912" rel="noopener" target="_blank">LEGO themselves</a> specify that it’s always an&nbsp;adjective!</p>
+
+  <h2>Ok, I’m on board! How can I&nbsp;help?</h2>
+  <p>If you see someone tweeting or hear someone saying <em>legos</em> or <em>a lego</em> point them in this direction (kindly) so that they may understand the truth. Thank you for helping to make the world a <em>legos</em>-free&nbsp;place.</p>
+
+  <p><a href="{{ shareUrl }}" rel="noopener" target="_blank"><strong>Tweet your new knowledge</strong></a> and use <a href="https://twitter.com/search?q=%23LEGOnotlegos&src=hash&f=realtime" rel="noopener" target="_blank"><strong>#legonotlegos</strong></a>!</p>
+</div>

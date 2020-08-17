@@ -1,0 +1,83 @@
+.header {
+  background: $lego-red;
+  color: $lego-white;
+  font-size: 1rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: $header-height;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+
+  @media screen and (min-width: 48em) {
+    margin-top: $header-offset;
+    margin-bottom: ($header-offset + $header-height) * -1;
+    position: sticky;
+  }
+
+  .group {
+    padding: 0;
+    align-items: center;
+    display: flex;
+  }
+
+  &__logo {
+    color: white;
+    font-size: 1.25rem;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    font-weight: 400;
+
+    > svg {
+      display: inline-block;
+      height: auto;
+      vertical-align: middle;
+      width: 2.5em;
+      margin-top: -0.15em;
+    }
+
+    #lego-white {
+      fill: white;
+    }
+
+    // #lego-white,
+    #lego-yellow {
+      // fill: transparent;
+      // fill: $color-dark;
+      // fill: mix($lego-red, white);
+      fill: mix(white, $lego-red);
+    }
+
+    #lego-black {
+      fill: $color-dark;
+      // fill: currentColor;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      color: mix(white, $lego-red, 80%);
+      // color: black;
+
+      #lego-black {
+        fill: black;
+      }
+
+      #lego-yellow {
+        fill: $lego-yellow;
+      }
+    }
+
+    &:active {
+      // opacity: 0.6;
+      color: mix(white, $lego-red, 60%);
+    }
+  }
+
+  &__share {
+    margin-left: auto;
+    font-size: 0.9375rem;
+  }
+}

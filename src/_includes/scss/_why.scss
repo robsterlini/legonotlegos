@@ -1,0 +1,16 @@
+.why {
+
+  &__set {
+    font-size: 1.25rem;
+    margin: 0 0 0.5em;
+  }
+
+  &__question {
+    display: inline;
+  }
+
+  &__answer {
+    display: inline;
+    font-weight: 600;
+  }
+}

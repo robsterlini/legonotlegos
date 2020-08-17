@@ -1,0 +1,141 @@
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  font-size: 0.9375rem;
+
+  @media screen and (min-width: 18em) {
+    font-size: 1.125rem;
+  }
+
+  @media screen and (min-width: 48em) {
+    font-size: calc(0.645rem + 1vw);
+  }
+
+  @media screen and (min-width: 110.5em) {
+    font-size: 1.75rem;
+  }
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  background: $color-dark;
+  color: $color-light;
+  text-shadow: rgba(black, 0.15) 0.05rem 0.05rem 0.1rem;
+  font-family: 'Asap', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  min-height: 100%;
+}
+
+.main {
+  background: $color-dark;
+  flex: 1;
+}
+
+.group {
+  margin: 0 auto;
+  width: calc(100% - 1.5rem);
+  max-width: 28rem;
+  padding: 3rem 0;
+
+  @media screen and (min-width: 48em) {
+    max-width: 42rem;
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  color: $color-lightest;
+  text-decoration-color: rgba($color-lightest, 0.5);
+
+  &[href^="http"]:not([href^="https://twitter"]) {
+
+    &:visited {
+      color: mix($color-lightest, $color-dark, 80%);
+      text-decoration-color: mix($color-lightest, $color-dark, 50%);
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-lightest;
+      text-decoration-color: currentColor;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration-color: currentColor;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.link--inherit {
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+abbr {
+  border: 0;
+  text-decoration: none;
+}
+
+h2 {
+  color: mix($color-minifig, $color-light, 80%);
+  margin: 2em 0 0.5em;
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin: 1.5em 0 0.5em;
+}
+
+p {
+  margin: 0 0 0.5em;
+  max-width: 36em;
+}
+
+::selection {
+  background: $lego-black;
+  color: $lego-white;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  border: 0;
+}

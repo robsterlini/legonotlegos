@@ -1,0 +1,55 @@
+.example {
+
+  @media screen and (min-width: 48em) {
+
+    h3 + & {
+      margin-top: -0.5rem;
+    }
+  }
+
+  &__set {
+    padding-left: 1.55rem;
+    margin: 1.5rem 0 0;
+  }
+
+  svg {
+    display: inline-block;
+    height: auto;
+    width: 1.25rem;
+    vertical-align: top;
+    margin-left: -1.7rem;
+    margin-top: -0.05rem;
+    margin-right: 0.25rem;
+  }
+
+  path {
+    fill: $color-minifig;
+  }
+
+  &__example {
+    margin: 0 0 0.5em;
+
+    &--good {
+      font-weight: 600;
+
+      path {
+        // fill: mix(#347813, $color-light, 25%);
+      }
+
+      circle {
+        // fill: #347813;
+      }
+    }
+  }
+
+
+  @media screen and (min-width: 48em) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+
+    > svg {
+      margin-left: 0;
+    }
+  }
+}
