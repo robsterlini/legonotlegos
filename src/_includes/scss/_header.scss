@@ -38,15 +38,15 @@
       margin-top: -0.15em;
     }
 
-    #lego-white {
+    .lego-white {
       fill: white;
     }
 
-    #lego-yellow {
+    .lego-yellow {
       fill: $lego-yellow;
     }
 
-    #lego-black {
+    .lego-black {
       fill: $lego-black;
     }
 
@@ -55,7 +55,7 @@
       opacity: 1;
       color: mix(white, $lego-red, 80%);
 
-      #lego-yellow {
+      .lego-yellow {
         fill: currentColor;
       }
     }
