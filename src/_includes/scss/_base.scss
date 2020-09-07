@@ -123,8 +123,7 @@ p {
 }
 
 ::selection {
-  background: $lego-black;
-  color: $lego-white;
+  background: lighten($lego-red, 33.3%);
 }
 
 .sr-only {

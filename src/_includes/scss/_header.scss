@@ -42,36 +42,25 @@
       fill: white;
     }
 
-    // #lego-white,
     #lego-yellow {
-      // fill: transparent;
-      // fill: $color-dark;
-      // fill: mix($lego-red, white);
-      fill: mix(white, $lego-red);
+      fill: $lego-yellow;
     }
 
     #lego-black {
-      fill: $color-dark;
-      // fill: currentColor;
+      fill: $lego-black;
     }
 
     &:hover,
     &:focus {
       opacity: 1;
       color: mix(white, $lego-red, 80%);
-      // color: black;
-
-      #lego-black {
-        fill: black;
-      }
 
       #lego-yellow {
-        fill: $lego-yellow;
+        fill: currentColor;
       }
     }
 
     &:active {
-      // opacity: 0.6;
       color: mix(white, $lego-red, 60%);
     }
   }
